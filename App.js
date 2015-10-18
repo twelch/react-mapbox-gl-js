@@ -1,7 +1,7 @@
 var App = React.createClass({
   getInitialState: function() {
     return {
-      mapToken: 'insert your public token here',
+      mapToken: 'pk.eyJ1IjoidHdlbGNoIiwiYSI6Il9pX3dtb3cifQ.YcYnsO0X2p3x0HpHPFfleg',
       mapView: {
         container: 'map',
         style: 'mapbox://styles/mapbox/streets-v8',
