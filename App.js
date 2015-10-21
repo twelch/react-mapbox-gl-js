@@ -1,12 +1,12 @@
 var App = React.createClass({
   getInitialState: function() {
     return {
-      mapToken: 'insert your public token here',
+      mapToken: 'pk.eyJ1IjoidHdlbGNoIiwiYSI6Il9pX3dtb3cifQ.YcYnsO0X2p3x0HpHPFfleg',
       mapView: {
         container: 'map',
-        style: 'mapbox://styles/mapbox/streets-v8',
-        center: [-122.6, 45.5],
-        zoom: 9
+        style: 'mapbox://styles/twelch/cifr49xm4000086m15ev17on0',
+        center: [-122.396, 37.781],
+        zoom: 15
       }
     };
   },
@@ -43,8 +43,27 @@ var GLMap = React.createClass({
 
   componentDidMount: function() {
     var el = ReactDOM.findDOMNode();
+    var self = this;
     mapboxgl.accessToken = this.props.token;
     this.map = new mapboxgl.Map(this.props.view);
+    this.map.on('click', function (e) {
+        self.map.featuresAt(e.point, {layer: 'lighting', radius: 5}, function (err, features) {
+            if (err) throw err;      
+            if (features.length > 0) {
+              console.log(features);
+              var tooltip = new mapboxgl.Popup()
+              .setLngLat(e.lngLat)
+              .setHTML('<h3>Lightpost!</h3>')
+              .addTo(self.map);
+            }
+        });
+    });
+    this.map.on('mousemove', function (e) {
+      self.map.featuresAt(e.point, {layer: 'lighting', radius: 10}, function (err, features) {
+        if (err) throw err;
+        self.map.getCanvas().style.cursor = features.length ? "pointer" : "";
+    });
+});
   },
 
   componentWillUnmount: function() {
