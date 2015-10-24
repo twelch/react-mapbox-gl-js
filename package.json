@@ -1,0 +1,14 @@
+{
+  "name": "react-mapbox-gl-js-sample",
+  "version": "0.0.0",
+  "description": "Simple React component for a Mapbox GLJS map",
+  "repository": "https://github.com/twelch/react-mapbox-gl-js",
+  "license": "Beer",
+  "devDependencies": {
+    "http-server": "^0.6.1"
+  },
+  "scripts": {
+    "prestart": "npm install",
+    "start": "http-server ."
+  }
+}
