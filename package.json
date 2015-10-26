@@ -3,9 +3,22 @@
   "version": "0.0.0",
   "description": "Simple React component for a Mapbox GLJS map",
   "repository": "https://github.com/twelch/react-mapbox-gl-js",
-  "license": "Beer",
-  "devDependencies": {
+  "license": "MIT",
+  "dependencies": {
     "http-server": "^0.6.1"
+  },
+  "devDependencies": {
+    "babel": "^5.8.29",
+    "babel-core": "^5.8.29",
+    "babel-loader": "^5.3.2",
+    "json-loader": "^0.5.3",
+    "mapbox-gl": "^0.11.1",
+    "raw-loader": "^0.5.1",
+    "react": "^0.14.0",
+    "react-dom": "^0.14.0",
+    "script-loader": "^0.6.1",
+    "style-loader": "^0.13.0",
+    "webpack": "^1.12.2"
   },
   "scripts": {
     "prestart": "npm install",
