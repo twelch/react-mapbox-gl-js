@@ -47,23 +47,22 @@ var GLMap = React.createClass({
     mapboxgl.accessToken = this.props.token;
     this.map = new mapboxgl.Map(this.props.view);
     this.map.on('click', function (e) {
-        self.map.featuresAt(e.point, {layer: 'lighting', radius: 5}, function (err, features) {
-            if (err) throw err;      
-            if (features.length > 0) {
-              console.log(features);
-              var tooltip = new mapboxgl.Popup()
-              .setLngLat(e.lngLat)
-              .setHTML('<h3>Lightpost!</h3>')
-              .addTo(self.map);
-            }
-        });
+      self.map.featuresAt(e.point, {layer: 'lighting', radius: 8}, function (err, features) {
+          if (err) throw err;      
+          if (features.length > 0) {
+            var tooltip = new mapboxgl.Popup()
+            .setLngLat(e.lngLat)
+            .setHTML('<h3>Lightpost!</h3>')
+            .addTo(self.map);
+          }
+      });
     });
     this.map.on('mousemove', function (e) {
-      self.map.featuresAt(e.point, {layer: 'lighting', radius: 10}, function (err, features) {
+      self.map.featuresAt(e.point, {layer: 'lighting', radius: 8}, function (err, features) {
         if (err) throw err;
         self.map.getCanvas().style.cursor = features.length ? "pointer" : "";
+      });
     });
-});
   },
 
   componentWillUnmount: function() {
