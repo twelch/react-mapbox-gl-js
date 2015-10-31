@@ -13,11 +13,14 @@ Edit App.js and enter your own default center location, zoom level, API access k
 #npm start
 ```
 Browse to localhost:8080/#your-public-mapbox-token
-Note this code is good for development only.  For a more full-featured React app see my [seed project](https://github.com/twelch/react-mapbox-gl-seed)
+
+## Next Steps
+
+Now continue to develop this example as you wish but note it is not well-suited for production use.  For a more full-featured React app example written in ES6 using React, React Router, Redux, Material UI, Webpack etc. see my [seed project](https://github.com/twelch/react-mapbox-gl-seed)
 
 ## Firebase (Optional)
-Continue to develop the code as desired.  When ready you can pushing using Firebase's static hosting service.
-Signup and create a new app at [firebase.com](http://firebase.com).  Now go to their app hosting page for furthe instruction.  In summary install firebase CLI too, authenticate against your account, initialize project synch, and push your code
+When ready you can make your demo map publicly available for free using Firebase's static hosting service.
+Signup and create a new app at [firebase.com](http://firebase.com).  Now go to the hosting tab for your new app for further instruction.  In summary install firebase CLI too, authenticate against your account, initialize project synch, and push your code.  That's all there is too it.
 ```
 npm install firebase
 firebase init
