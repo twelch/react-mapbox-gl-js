@@ -1,4 +1,6 @@
 # react-mapgbox-gl-js
+* This example is no longer recommended for use, though it does work.  The pattern you're looking for in integrating Mapbox GL JS with React is explained in detail by Tom Macwright in his [blog post](https://www.mapbox.com/blog/mapbox-gl-js-reactive/) and it uses style diffs to transition between map states in a reactive manner rather than using the more imperative Mapbox GL JS API as this code does.  This [library from Uber](https://github.com/uber/react-map-gl) uses it.  Good luck.
+
 Simple React component for a Mapbox GLJS map (aka mapbox-gl-js)
 
 A Mapbox GL map creates and manages its own DOM elements outside of React's virtual DOM.  Not a problem, we can still encapsulate a map into a React component and keep things separate. This example borrows heavily from a [blog post](http://nicolashery.com/integrating-d3js-visualizations-in-a-react-app/) written by Nicolas Hery demonstrating a technique for incorporating D3 into a React app.
